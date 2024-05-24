@@ -45,3 +45,7 @@ export const fetchShipments: (
 		customerId?: string; status?: string; orderId?: string 
 	}
 ) => Promise<Shipment[]>;
+
+export const fetchShipmentInfo: (
+	id: string
+) => Promise<Shipment>;
