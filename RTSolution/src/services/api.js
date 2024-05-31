@@ -13,23 +13,39 @@ export const fetchShipmentInfo = async (id) => {
 }
 
 export const addShipment = async (newShipment) => {
-    
+    const newId = generateUniqueId();
+    console.log(newId);
     const defaultShipment = {
-        id: generateUniqueId(),
-        carrierTrackingUrl: '',
-        status: 'initialized',
-        statusChangeDate: new Date().toISOString(),
         ...newShipment,
+        id: newId,
+        carrierTrackingUrl: newShipment.carrierTrackingUrl || '',
+        status: newShipment.status || 'initialized',
+        statusChangeDate: newShipment.statusChangeDate || new Date().toISOString(),
     };
     mockShipments.push(defaultShipment);
-    return;
+    console.log(defaultShipment);
+    return defaultShipment.id;
 }
 
 const generateUniqueId = () => {
-    let len = mockShipments.map.length;
-    let lastId = mockShipments.map.call(len).id;
-    return lastId+1;
+    if (mockShipments.length === 0) {
+        return '1';
+    }
+    const lastId = Math.max(...mockShipments.map((shipment) => parseInt(shipment.id, 10) || 0));
+    console.log(lastId + 1);
+    const newId = '0' + ((lastId + 1).toString());
+    console.log(newId);
+    return newId;
 }
+
+export const updateShipment = async (updatedShipment) => {
+    const shipmentIndex = mockShipments.findIndex(shipment => shipment.id === updatedShipment.id);
+    if (shipmentIndex === -1) {
+      throw new Error('Shipment not found');
+    }
+    mockShipments[shipmentIndex] = updatedShipment;
+    return updatedShipment.id;
+  };
 
 export const fetchShipments = async (filters) => {
 
@@ -60,4 +76,3 @@ export const fetchShipments = async (filters) => {
 
 	return filteredShipments;
 }
-

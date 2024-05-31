@@ -52,4 +52,8 @@ export const fetchShipmentInfo: (
 
 export const addShipment: (
 	newShipment: Shipment
-) => Promse<Shipment[]>;
+) => string;
+
+export const updateShipment:(
+	updatedShipment: Shipment
+)=> string;

@@ -93,3 +93,9 @@ select{
     background-color: #ff6542;
     transition: background-color 0.5s;
 }
+
+.error-message{
+    font-weight: 700;
+    font-size: 1.25rem;
+    color:#9e1d00;
+}

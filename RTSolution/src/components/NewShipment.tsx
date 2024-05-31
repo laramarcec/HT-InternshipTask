@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 import {addShipment} from "../services/api.js";
 import '../styles/New.css';
+import { useNavigate } from 'react-router-dom';
 
 interface Shipment {
   id: string;
@@ -46,6 +47,8 @@ interface Address {
 }
 
 const NewShipment: React.FC = () => {
+  const navigate = useNavigate();
+
   const [error, setError] = useState<string>('');
   const [shipmentForm, setShipmentForm] = useState<Shipment>({
     id:'',
@@ -173,7 +176,13 @@ const NewShipment: React.FC = () => {
       createDate: new Date(shipmentForm.createDate).toISOString(),
     } as Shipment;
   
-    addShipment(formattedData);
+    try {
+      const id = await addShipment(formattedData) as string;
+      navigate(`/shipmentTracking/${id}`);
+    } catch (error) {
+      setError('Failed to add shipment');
+    }
+	
   
     console.log(formattedData);
   };
@@ -220,10 +229,10 @@ const NewShipment: React.FC = () => {
               onChange={handleStatusChange}
             >
               <option value="">Carrier</option>
-              <option value="dhl">DHL</option>
-              <option value="fedex">FedEx</option>
-              <option value="gls">GLS</option>
-              <option value="ups">UPS</option>
+              <option value="DHL">DHL</option>
+              <option value="FedEx">FedEx</option>
+              <option value="GLS">GLS</option>
+              <option value="UPS">UPS</option>
             </select>
           </div>
           <div className='input-div'>
@@ -414,9 +423,10 @@ const NewShipment: React.FC = () => {
               {renderClearButton("createDate")}
             </div>
           </div>
+          {error && <p className='error-message'>{error}</p>}
           <button className='submit-button' type="submit">submit</button>
         </form>
-        {error && <p className='error-message'>{error}</p>}
+        
       </div>
     </div>
   );

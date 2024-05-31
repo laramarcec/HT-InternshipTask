@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Shipment, fetchShipmentInfo } from "../services/api.js";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const InfoShipment: React.FC = () => {
 	const {id} = useParams<{id:string}>();
@@ -19,6 +19,15 @@ const InfoShipment: React.FC = () => {
 	}
 
 	return (
+		<div className='info-div'>
+			<Link className="home-link" to={`/shipmentTracking/${id}/edit`}>
+			<span className="material-symbols-outlined">
+				edit
+			</span>
+			<p>
+				edit shipment
+			</p>
+		</Link>
 		<div className='table-div'>
 			<table className='tracking-table'>
 				<tbody>
@@ -56,6 +65,7 @@ const InfoShipment: React.FC = () => {
 					</tr>
 				</tbody>
 			</table>
+		</div>
 		</div>
 	);
 
