@@ -49,3 +49,7 @@ export const fetchShipments: (
 export const fetchShipmentInfo: (
 	id: string
 ) => Promise<Shipment>;
+
+export const addShipment: (
+	newShipment: Shipment
+) => Promse<Shipment[]>;

@@ -1,0 +1,95 @@
+.new-div{
+    margin-bottom: 4rem;
+}
+
+.input-div{
+    padding:0.5rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.header-p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.input{
+    background-color: rgba(192, 192, 192, 0.5);
+    border: none;
+    margin: 0.5rem;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    border-radius: 50px;
+    color:rgba(0, 0, 0); 
+}
+
+.input::placeholder{
+    color:rgba(0, 0, 0, 0.5); 
+}
+
+.new-submit{
+    display:flex;
+    flex-direction: row;
+	margin: 2rem;
+	padding: 0.25rem 2rem 0.25rem 2rem;
+	font-weight: 700;
+    font-size: 1.25rem;
+	color:#ff6542;
+	transition: color 0.5s;
+	background-color: transparent;
+    border:none;
+}
+
+.new-submit:hover{
+	color:#9e1d00;
+	transition: color 0.5s;
+    cursor:pointer;
+}
+
+.create-p{
+    padding: 0rem 0.75rem 0rem 0.75rem;
+}
+
+.input-label{
+    font-weight: 600;
+}
+
+.clear-button{
+    background-color: transparent;
+    border: none;
+    color: black;
+    position: absolute;
+    padding-right: 1.25rem;
+    cursor: pointer;
+}
+   
+
+.input-wrapper{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: end;
+}
+select{
+    padding: 0.5rem 2rem 0.5rem 1rem;
+}
+
+.submit-button {
+    background-color: #9e1d00;
+    border:none;
+    border-radius: 25px;
+    font-size: 1.25rem;
+    font-weight:500;
+    padding: 1rem;
+    margin:1rem;
+    cursor:pointer;
+    transition: background-color 0.5s;
+}
+
+.submit-button:hover{
+    background-color: #ff6542;
+    transition: background-color 0.5s;
+}

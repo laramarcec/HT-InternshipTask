@@ -1,0 +1,40 @@
+.home-linkdiv {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;
+}
+
+.home-link {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin: 2rem;
+	padding: 0.25rem 2rem 0.25rem 2rem;
+	font-weight: 700;
+	color:#9e1d00;
+	transition: color 0.5s;
+	background-color: transparent;
+	border:none;
+}
+
+
+.material-symbols-outlined{
+	align-self: center;
+	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+	font-size: 2.1rem;
+	background-color: #01617700;
+	border-radius: 50px;
+	border:2px solid #016177d7;
+}
+
+.home-link p{
+	display: inline;
+	padding: 0rem 0.75rem 0rem 0.75rem;
+}
+
+.home-link:hover{
+	color:#ff6542;
+	transition: color 0.5s;
+}
+

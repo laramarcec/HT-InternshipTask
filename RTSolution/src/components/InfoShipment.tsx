@@ -19,13 +19,46 @@ const InfoShipment: React.FC = () => {
 	}
 
 	return (
-		<div>
-			<ul>
-				<li>{shipment.id}</li>
-				<li>{shipment.carrier}</li>
-			</ul>
+		<div className='table-div'>
+			<table className='tracking-table'>
+				<tbody>
+					<tr>
+						<td className= "table-details">ID</td>
+						<td>{shipment.id}</td>
+					</tr>
+					<tr>
+						<td className= "table-details">Carrier</td>
+						<td>{shipment.carrier}</td>
+					</tr>
+					<tr>
+						<td className= "table-details">Tracking Code</td>
+						<td>{shipment.trackingCode}</td>
+					</tr>
+					<tr>
+						<td className= "table-details">Carrier Tracking URL</td>
+						<td><a href={shipment.carrierTrackingUrl}>{shipment.carrierTrackingUrl}</a></td>
+					</tr>
+					<tr>
+						<td className= "table-details">Status</td>
+						<td>{shipment.status}</td>
+					</tr>
+					<tr>
+						<td className= "table-details">Weight</td>
+						<td>{shipment.weight}</td>
+					</tr>
+					<tr>
+						<td className= "table-details">Address From (Country)</td>
+						<td>{shipment.addressFrom.country}</td>
+					</tr>
+					<tr>
+						<td className= "table-details">Address To (Country)</td>
+						<td>{shipment.addressTo.country}</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	);
+
 };
 
 export default InfoShipment;

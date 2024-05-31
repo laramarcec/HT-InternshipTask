@@ -1,0 +1,148 @@
+.tracking-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.home-link{
+    padding: 1rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+.tracking-input-div{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tracking-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:1rem;
+}
+
+.tracking-header{
+    text-align: center;
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem;
+}
+
+.tracking-input{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tracking-input input, .tracking-select{
+    background-color: transparent;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 3px solid #ff6542d4;
+    border-radius: 50px;
+    color:black;
+}
+
+.tracking-menu {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.home-link p{
+    font-size: 1.2rem;
+	display: inline;
+	padding: 0rem 0.75rem 0rem 0.75rem;
+    background-color: transparent;
+
+}
+
+.tracking-table {
+    display: inline-table;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tracking-table th, .tracking-table td {
+    border: 1px solid transparent;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.tracking-table p{
+    margin: 0;
+    text-align: left;
+}
+
+.tracking-table th {
+    background-color: #EDF5FC;;
+    color:#016177d7;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.table-row{
+    transition: background-color 0.3s ease;
+}
+
+.table-row:hover{
+    cursor: pointer;
+    background-color: rgba(192, 192, 192, 0.5);
+}
+
+.table-div{
+    margin: 0.5rem;
+    padding: 1rem 2rem 1rem 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+option{
+    padding: 1rem;
+    color: black;
+}
+
+select{
+    color:black;
+}
+
+::placeholder{
+    color:rgba(0, 0, 0, 0.5);
+}
+
+.reset-button{
+    background-color: #9e1d00;
+    margin: 0.5rem;
+    padding: 0.75rem;
+    border:none;
+    border-radius: 50px;
+    color:#EDF5FC;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor:pointer;
+    transition: background-color 0.3s;
+}
+
+.reset-button:hover{
+    background-color: #ff6542;
+    transition: background-color 0.3s;
+
+}
+
+.table-details{
+    color:#016177;
+}

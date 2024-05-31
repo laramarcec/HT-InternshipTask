@@ -271,7 +271,7 @@ const mockShipments = [
 	},
 	{
 		id: '007',
-		status: 'outForDelivery',
+		status: 'inCustoms',
 		carrier: 'DHL',
 		trackingCode: 'DHL456789',
 		carrierTrackingUrl: 'https://dhl.com/track?code=DHL456789',
@@ -316,7 +316,7 @@ const mockShipments = [
 	},
 	{
 		id: '008',
-		status: 'inTransit',
+		status: 'shipped',
 		carrier: 'FedEx',
 		trackingCode: 'FedEx234567',
 		carrierTrackingUrl: 'https://www.fedex.com/apps/fedextrack/?tracknumbers=FedEx234567',
@@ -361,7 +361,7 @@ const mockShipments = [
 	},
 	{
 		id: '009',
-		status: 'pending',
+		status: 'inProcess',
 		carrier: 'GLS',
 		trackingCode: 'GLS678910',
 		carrierTrackingUrl: 'https://gls-group.com/HR/hr/pracenje-posiljke/?match=GLS678910',
@@ -406,7 +406,7 @@ const mockShipments = [
 	},
 	{
 		id: '010',
-		status: 'cancelled',
+		status: 'returned',
 		carrier: 'GLS',
 		trackingCode: 'GLS345678',
 		carrierTrackingUrl: 'https://gls-group.com/HR/hr/pracenje-posiljke/?match=GLS345678',

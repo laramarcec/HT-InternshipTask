@@ -12,6 +12,25 @@ export const fetchShipmentInfo = async (id) => {
 
 }
 
+export const addShipment = async (newShipment) => {
+    
+    const defaultShipment = {
+        id: generateUniqueId(),
+        carrierTrackingUrl: '',
+        status: 'initialized',
+        statusChangeDate: new Date().toISOString(),
+        ...newShipment,
+    };
+    mockShipments.push(defaultShipment);
+    return;
+}
+
+const generateUniqueId = () => {
+    let len = mockShipments.map.length;
+    let lastId = mockShipments.map.call(len).id;
+    return lastId+1;
+}
+
 export const fetchShipments = async (filters) => {
 
     let filteredShipments = mockShipments;
