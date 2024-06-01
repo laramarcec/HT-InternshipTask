@@ -8,6 +8,7 @@ import InfoShipment from './components/InfoShipment.tsx';
 import EditShipment from './components/EditShipment.tsx';
 import NotFoundPage from './components/NotFoundPage.tsx';
 import NavBar from './layout/NavBar.tsx';
+import Footer from './layout/Footer.tsx';
 
 import './styles/App.css';
 
@@ -28,6 +29,7 @@ const App:React.FC = () =>
           </Routes>
         </div >
       </Suspense>
+      <Footer/>
     </Router>
   )
 }

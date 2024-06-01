@@ -4,12 +4,6 @@ import mockShipments from "./mockData";
 export const fetchShipmentInfo = async (id) => {
 	let shipmentInfo = mockShipments.find((shipment) => shipment.id === id);
 	return shipmentInfo;
-/* 	const response = await fetch(`${API_URL}/${id}`);
-	if (!response.ok) {
-			throw new Error('Failed to fetch shipment');
-	}
-	return await response.json(); */
-
 }
 
 export const addShipment = async (newShipment) => {
@@ -66,13 +60,5 @@ export const fetchShipments = async (filters) => {
             (shipment) => shipment.order.some((order) => order.id === filters.orderId)
         );
     }
-
-    /* const params = new URLSearchParams(filters);
-    const response = new fetch(`${API_URL}?${params}`);
-    if(!response.ok){
-        throw new Error("failed to fetch shipment");
-    }
-    return await response.json(); */
-
 	return filteredShipments;
 }

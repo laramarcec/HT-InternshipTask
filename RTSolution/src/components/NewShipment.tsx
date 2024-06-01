@@ -204,9 +204,6 @@ const NewShipment: React.FC = () => {
     }
     return value;
   };
-
-  
-  
   
   const renderClearButton = (fieldName: string) => {
     return (
