@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { fetchShipmentInfo, updateShipment } from '../services/api.js';
+import { fetchShipmentInfo, updateShipment } from '../services/apiMock.js';
 
 interface Shipment {
 	id: string;
@@ -17,7 +17,7 @@ interface Shipment {
 	status: string;
 	statusChangeDate: string;
 	statusChangeReason:string;
-	order: OrderRefType[];
+	order: OrderRefType;
 }
   
 interface OrderRefType {
@@ -299,7 +299,7 @@ const EditShipment: React.FC = () => {
             </div>
           </div>
           <div className='input-div'>
-            <label className='input-label'>Weight:</label>
+            <label className='input-label'>Weight (grams):</label>
             <div className="input-wrapper">
               <input
                 className='input'

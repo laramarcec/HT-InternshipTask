@@ -1,78 +1,75 @@
-import mockShipments from "./mockData";
-/* const API_URL = 'https://localhost:8017/shipmentTracking/v1/shipmentTracking'; */
+const API_URL = 'https://localhost:8017/shipmentTracking/v1/shipmentTracking';
 
 export const fetchShipmentInfo = async (id) => {
-	let shipmentInfo = mockShipments.find((shipment) => shipment.id === id);
-	return shipmentInfo;
-/* 	const response = await fetch(`${API_URL}/${id}`);
-	if (!response.ok) {
-			throw new Error('Failed to fetch shipment');
-	}
-	return await response.json(); */
-
-}
+  try {
+    const response = await fetch(`${API_URL}/${id}`);
+    if (!response.ok) {
+      let errorMessage = 'Failed to fetch shipment';
+      if (response.status === 404) {
+        errorMessage = 'Shipment not found';
+      } else {
+        const responseBody = await response.json();
+        if (responseBody && responseBody.error) {
+          errorMessage = responseBody.error.message;
+        }
+      }
+      throw new Error(errorMessage);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching shipment info:', error);
+    throw error;
+  }
+};
 
 export const addShipment = async (newShipment) => {
-    const newId = generateUniqueId();
-    console.log(newId);
-    const defaultShipment = {
-        ...newShipment,
-        id: newId,
-        carrierTrackingUrl: newShipment.carrierTrackingUrl || '',
-        status: newShipment.status || 'initialized',
-        statusChangeDate: newShipment.statusChangeDate || new Date().toISOString(),
-    };
-    mockShipments.push(defaultShipment);
-    console.log(defaultShipment);
-    return defaultShipment.id;
-}
+	try {
+		const response = await fetch(API_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(newShipment),
+		});
+		if (!response.ok) {
+			throw new Error(`Failed to create shipment: ${response.statusText}`);
+		}
+		return await response.json();
+	} catch (error) {
+		console.error('Error adding shipment:', error);
+		throw error;
+	}
+};
 
-const generateUniqueId = () => {
-    if (mockShipments.length === 0) {
-        return '1';
+export const updateShipment = async (id, updatedFields) => {
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedFields),
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to update shipment: ${response.statusText}`);
     }
-    const lastId = Math.max(...mockShipments.map((shipment) => parseInt(shipment.id, 10) || 0));
-    console.log(lastId + 1);
-    const newId = '0' + ((lastId + 1).toString());
-    console.log(newId);
-    return newId;
-}
-
-export const updateShipment = async (updatedShipment) => {
-    const shipmentIndex = mockShipments.findIndex(shipment => shipment.id === updatedShipment.id);
-    if (shipmentIndex === -1) {
-      throw new Error('Shipment not found');
-    }
-    mockShipments[shipmentIndex] = updatedShipment;
-    return updatedShipment.id;
-  };
+    return await response.json();
+  } catch (error) {
+    console.error('Error updating shipment:', error);
+    throw error;
+  }
+};
 
 export const fetchShipments = async (filters) => {
-
-    let filteredShipments = mockShipments;
-
-    if(filters.customerId){
-        filteredShipments = filteredShipments.filter(
-            (shipment) => shipment.relatedCustomer.id === filters.customerId
-        );
+  try {
+    const params = new URLSearchParams(filters).toString();
+    const response = await fetch(`${API_URL}?${params}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch shipments: ${response.statusText}`);
     }
-    if(filters.status){
-        filteredShipments = filteredShipments.filter(
-            (shipment) => shipment.status === filters.status
-        );
-    }
-    if(filters.orderId){
-        filteredShipments = filteredShipments.filter(
-            (shipment) => shipment.order.some((order) => order.id === filters.orderId)
-        );
-    }
-
-    /* const params = new URLSearchParams(filters);
-    const response = new fetch(`${API_URL}?${params}`);
-    if(!response.ok){
-        throw new Error("failed to fetch shipment");
-    }
-    return await response.json(); */
-
-	return filteredShipments;
-}
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching shipments:', error);
+    throw error;
+  }
+};

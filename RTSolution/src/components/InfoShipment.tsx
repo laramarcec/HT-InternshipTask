@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Shipment, fetchShipmentInfo } from "../services/api.js";
+import { Shipment, fetchShipmentInfo } from "../services/apiMock.js";
 import { Link, useParams } from 'react-router-dom';
 
 const InfoShipment: React.FC = () => {
@@ -36,8 +36,13 @@ const InfoShipment: React.FC = () => {
 						<td>{shipment.id}</td>
 					</tr>
 					<tr>
-						<td className= "table-details">Carrier</td>
-						<td>{shipment.carrier}</td>
+						<td className= "table-details">Customer ID</td>
+						<td>{shipment.relatedCustomer.id}</td>
+					</tr>
+
+					<tr>
+						<td className= "table-details">Order ID</td>
+						<td>{shipment.order.id}</td>
 					</tr>
 					<tr>
 						<td className= "table-details">Tracking Code</td>
@@ -52,7 +57,7 @@ const InfoShipment: React.FC = () => {
 						<td>{shipment.status}</td>
 					</tr>
 					<tr>
-						<td className= "table-details">Weight</td>
+						<td className= "table-details">Weight (grams)</td>
 						<td>{shipment.weight}</td>
 					</tr>
 					<tr>

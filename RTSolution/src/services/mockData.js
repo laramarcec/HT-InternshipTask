@@ -28,14 +28,14 @@ const mockShipments = [
 			city: 'Zagreb',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order1',
-				href: 'https://example.com/orders/order1',
-				name: 'Order 1',
-				referredType: 'type1'
-			}
-		],
+		order: 
+		{
+			id: 'order1',
+			href: 'https://example.com/orders/order1',
+			name: 'Order 1',
+			referredType: 'type1'
+		},
+		
 		relatedCustomer: {
 			id: 'customer1',
 			href: 'https://example.com/customers/customer1',
@@ -73,14 +73,13 @@ const mockShipments = [
 				city: 'Zagreb',
 				country: 'HR'
 			},
-			order: [
-				{
-					id: 'order2',
-					href: 'https://example.com/orders/order2',
-					name: 'Order 2',
-					referredType: 'type2'
-				}
-			],
+			order: 
+			{
+				id: 'order2',
+				href: 'https://example.com/orders/order2',
+				name: 'Order 2',
+				referredType: 'type2'
+			},
 			relatedCustomer: {
 				id: 'customer2',
 				href: 'https://example.com/customers/customer2',
@@ -118,14 +117,13 @@ const mockShipments = [
 			city: 'Split',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order3',
-				href: 'https://example.com/orders/order3',
-				name: 'Order 3',
-				referredType: 'type3'
-			}
-		],
+		order:
+		{
+			id: 'order3',
+			href: 'https://example.com/orders/order3',
+			name: 'Order 3',
+			referredType: 'type3'
+		},
 		relatedCustomer: {
 			id: 'customer3',
 			href: 'https://example.com/customers/customer3',
@@ -163,14 +161,13 @@ const mockShipments = [
 			city: 'Split',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order4',
-				href: 'https://example.com/orders/order4',
-				name: 'Order 4',
-				referredType: 'type4'
-			}
-		],
+		order: 
+		{
+			id: 'order4',
+			href: 'https://example.com/orders/order4',
+			name: 'Order 4',
+			referredType: 'type4'
+		},
 		relatedCustomer: {
 			id: 'customer4',
 			href: 'https://example.com/customers/customer4',
@@ -208,14 +205,13 @@ const mockShipments = [
 			city: 'Rijeka',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order5',
-				href: 'https://example.com/orders/order5',
-				name: 'Order 5',
-				referredType: 'type5'
-			}
-		],
+		order: 
+		{
+			id: 'order5',
+			href: 'https://example.com/orders/order5',
+			name: 'Order 5',
+			referredType: 'type5'
+		},
 		relatedCustomer: {
 			id: 'customer5',
 			href: 'https://example.com/customers/customer5',
@@ -253,14 +249,13 @@ const mockShipments = [
           city: 'Zagreb',
           country: 'HR'
         },
-        order: [
-          {
-            id: 'order6',
-            href: 'https://example.com/orders/order6',
-            name: 'Order 6',
-            referredType: 'type6'
-          }
-        ],
+        order:
+		{
+		id: 'order6',
+		href: 'https://example.com/orders/order6',
+		name: 'Order 6',
+		referredType: 'type6'
+		},
         relatedCustomer: {
           id: 'customer6',
           href: 'https://example.com/customers/customer6',
@@ -298,14 +293,13 @@ const mockShipments = [
 			city: 'Zagreb',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order7',
-				href: 'https://example.com/orders/order7',
-				name: 'Order 7',
-				referredType: 'type7'
-			}
-		],
+		order: 
+		{
+			id: 'order7',
+			href: 'https://example.com/orders/order7',
+			name: 'Order 7',
+			referredType: 'type7'
+		},
 		relatedCustomer: {
 			id: 'customer7',
 			href: 'https://example.com/customers/customer7',
@@ -343,14 +337,13 @@ const mockShipments = [
 			city: 'Zagreb',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order8',
-				href: 'https://example.com/orders/order8',
-				name: 'Order 8',
-				referredType: 'type8'
-			}
-		],
+		order:
+		{
+			id: 'order8',
+			href: 'https://example.com/orders/order8',
+			name: 'Order 8',
+			referredType: 'type8'
+		},
 		relatedCustomer: {
 			id: 'customer8',
 			href: 'https://example.com/customers/customer8',
@@ -388,14 +381,13 @@ const mockShipments = [
 			city: 'Zagreb',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order9',
-				href: 'https://example.com/orders/order9',
-				name: 'Order 9',
-				referredType: 'type9'
-			}
-		],
+		order: 
+		{
+			id: 'order9',
+			href: 'https://example.com/orders/order9',
+			name: 'Order 9',
+			referredType: 'type9'
+		},
 		relatedCustomer: {
 			id: 'customer9',
 			href: 'https://example.com/customers/customer9',
@@ -433,14 +425,13 @@ const mockShipments = [
 			city: 'Zagreb',
 			country: 'HR'
 		},
-		order: [
-			{
-				id: 'order10',
-				href: 'https://example.com/orders/order10',
-				name: 'Order 10',
-				referredType: 'type10'
-			}
-		],
+		order:
+		{
+			id: 'order10',
+			href: 'https://example.com/orders/order10',
+			name: 'Order 10',
+			referredType: 'type10'
+		},
 		relatedCustomer: {
 			id: 'customer10',
 			href: 'https://example.com/customers/customer10',

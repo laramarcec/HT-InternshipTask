@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 
-import {addShipment} from "../services/api.js";
+import {addShipment} from "../services/apiMock.js";
 import '../styles/New.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ interface Shipment {
   status: string;
   statusChangeDate: string;
   statusChangeReason:string;
-  order: OrderRefType[];
+  order: OrderRefType;
 }
 
 interface OrderRefType {
@@ -84,7 +84,12 @@ const NewShipment: React.FC = () => {
   status: '',
   statusChangeDate: '',
   statusChangeReason:'',
-  order: [],
+  order: {
+    id: '',
+    href: '',
+    name: '',
+    referredType: '',
+  },
   });
 
   const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
@@ -382,7 +387,7 @@ const NewShipment: React.FC = () => {
             </div>
           </div>
           <div className='input-div'>
-            <label className='input-label'>Weight:</label>
+            <label className='input-label'>Weight (grams):</label>
             <div className="input-wrapper">
               <input
                 className='input'

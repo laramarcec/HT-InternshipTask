@@ -11,8 +11,6 @@ import NavBar from './layout/NavBar.tsx';
 
 import './styles/App.css';
 
-
-
 const App:React.FC = () => 
 {
   return (
