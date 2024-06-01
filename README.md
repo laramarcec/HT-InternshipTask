@@ -1,0 +1,2 @@
+Zadatak je riješen pomoću alata Vite uz React. 
+Web aplikacija ima definirane mock podatke u mockData.js datoteci, a uz to postoji i apiMock.js koji simulira dohvaćanje i obradu tih mock podatka. Unatoč tome, u projektu se nalazi i datoteka api.js koja je implementirana prema Swagger specifikaciji, ali se zapravo nigdje ne koristi jer se sve dohvaća i obrađuje kroz mock.
